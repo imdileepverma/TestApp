@@ -1,0 +1,35 @@
+
+<div class="login">
+    <div class="login-box">
+        <h2 class="login-header">Sign In</h2>
+    </div>  
+
+    <form [formGroup]="loginForm" class="login-container" (ngSubmit)="login()">
+
+        <p [ngClass]="{ 'has-error': isSubmitted && formControls.email.errors }">
+        <input type="email" placeholder="Email" formControlName="email">
+        </p>
+
+        <div *ngIf="isSubmitted && formControls.email.errors" class="help-block">
+        <div *ngIf="formControls.email.errors.required">Email is required</div>
+        </div>
+
+        <p [ngClass]="{ 'has-error': isSubmitted && formControls.password.errors }">
+        <input type="password" placeholder="Password" formControlName="password">
+        </p>
+
+        <div *ngIf="isSubmitted && formControls.password.errors" class="help-block">
+        <div *ngIf="formControls.password.errors.required">Password is required</div>
+        </div><br>
+       
+        <p>
+        <input type="submit" value="Sign In">
+        </p>
+        <p>
+          <input type="button" value="Sign Up" (click)="signup()">
+        </p>
+    </form>
+
+    <ngx-spinner type="ball-clip-rotate-multiple"></ngx-spinner>
+</div>
+

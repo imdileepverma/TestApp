@@ -1,0 +1,56 @@
+.header{
+    height: 68px;
+    background: linear-gradient(90deg, #F76665 35%, #01EBEF 100%) !important;
+}
+
+.title{
+    padding: 16px;
+    color: white;
+}
+
+.add-block{
+    text-align: right;
+    margin: 32px;
+}
+
+.add-btn {
+    background: #F76665;
+    border:3px solid lightgray;
+    border-radius: 25px;
+}
+
+.warning{
+    color:#F76665;
+    margin-bottom: 16px;
+}
+
+input {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    border-width: 1px;
+    border-style: solid;
+    padding: 16px;
+    outline: 0;
+    font-family: inherit;
+    font-size: 1.2em;
+}
+
+.edit{
+    width: 30px
+}
+
+.delete{
+    width: 30px;
+    margin-left: 32px;
+}
+
+.save-btn{
+    background: #F76665;
+    color: white;
+    width: 150px;
+    height: 40px;
+    border: 3px lightgray !important;
+    border-radius: 25px;
+    margin-top: 24px;
+}

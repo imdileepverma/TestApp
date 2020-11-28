@@ -1,0 +1,117 @@
+/* 'Open Sans' font from Google Fonts */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
+
+.login {
+  width: 400px;
+  margin: 48px auto;
+  margin-top: 20vh;
+  font-size: 16px;
+}
+
+.login-header,
+.login p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.login-triangle {
+  width: 0;
+  margin-right: auto;
+  margin-left: auto;
+  border: 12px solid transparent;
+  border-bottom-color: rgb(15, 66, 107);
+}
+
+.login-header {
+ /* background: linear-gradient(90deg, #F76665 35%, #01EBEF 100%) !important;*/
+  padding: 20px;
+  font-size: 1.4em;
+  font-weight: normal;
+  text-align: center;
+  text-transform: capitalize;
+  color: #fff;
+}
+
+.login-box{
+  background: linear-gradient(90deg, #F76665 35%, #01EBEF 100%) !important;
+}
+
+.login-container {
+  background: #ebebeb;
+  padding: 12px;
+}
+
+.login p {
+  padding: 12px;
+}
+
+.login input {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  border-width: 1px;
+  border-style: solid;
+  padding: 16px;
+  outline: 0;
+  font-family: inherit;
+  font-size: 0.95em;
+}
+
+.login input[type="email"],
+.login input[type="password"] {
+  background: #fff;
+  border-color: #bbb;
+  color: #555;
+}
+
+.login input[type="email"]:focus,
+.login input[type="password"]:focus {
+  border-color: #888;
+}
+
+.login input[type="submit"] {
+  background: rgb(1, 29, 51);
+  border-color: transparent;
+  color: #fff;
+  cursor: pointer;
+}
+
+.login input[type="button"] {
+  background: rgb(1, 29, 51);
+  border-color: transparent;
+  color: #fff;
+  cursor: pointer;
+}
+
+.login input[type="submit"]:hover {
+  background: #01EBEF !important;
+}
+
+.login input[type="submit"] {
+  background:#01EBEF !important;
+}
+
+.login input[type="button"] {
+  background:#F76665 !important;
+}
+
+.login input[type="submit"]:focus {
+  border-color: #05a;
+}
+
+.form-check-input {
+  margin-left: -5.25rem;
+  margin-top: 0.1rem;
+}
+
+.card {
+  width: 22rem;
+  margin: 10% auto;
+  text-align: center;
+}
+
+.warning{
+  color:#F76665;
+  margin-left: 16px;
+}

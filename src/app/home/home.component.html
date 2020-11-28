@@ -1,0 +1,88 @@
+<div class="header">
+    <h3 class="title">Dashboard</h3>
+</div>
+
+<div class="add-block">
+    <button type="button" class="btn btn-primary btn-lg add-btn" (click)="open(content, 'add-new-car')">Add New Car</button>
+</div>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Make</th>
+            <th scope="col">Max_speed</th>
+            <th scope="col">Engine_size</th>
+            <th scope="col">Created_date</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let car of carList; index as i">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>{{ car.make }}</td>
+            <td>{{ car.maxSpeed }}</td>
+            <td>{{ car.engineSize }}</td>
+            <td>{{ car.createdDate }}</td>
+            <td>
+                <img src="assets/icons/edit.png" class="edit" (click)="open(content, 'add-new-car', car)">
+                <img src="assets/icons/delete.png" class="delete" (click)="open(delete, 'delete-modal', car)">
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+  <ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="add-new-car" *ngIf="!updateCar">New Car</h4>
+      <h4 class="modal-title" id="add-new-car" *ngIf="updateCar">Update Car  Details</h4>
+      <button type="button" class="close" aria-label="Close" (click)="close()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form [formGroup]="carForm">
+        <p [ngClass]="{ 'has-error': isSubmitted && formControls.make.errors }">
+        <input type="text" placeholder="Make" formControlName="make">
+        </p>
+        <div *ngIf="isSubmitted && formControls.make.errors" class="help-block">
+        <div *ngIf="formControls.make.errors.required" class="warning">Make is required</div>
+        </div>
+
+        <p [ngClass]="{ 'has-error': isSubmitted && formControls.maxSpeed.errors }">
+        <input type="text" placeholder="Max_speed" formControlName="maxSpeed">
+        </p>
+        <div *ngIf="isSubmitted && formControls.maxSpeed.errors" class="help-block">
+        <div *ngIf="formControls.maxSpeed.errors.required" class="warning">Max_speed is required</div>
+        </div>
+
+        <p [ngClass]="{ 'has-error': isSubmitted && formControls.engineSize.errors }">
+        <input type="text" placeholder="Engine_size" formControlName="engineSize">
+        </p>
+        <div *ngIf="isSubmitted && formControls.engineSize.errors" class="help-block">
+        <div *ngIf="formControls.engineSize.errors.required" class="warning">Engine_size is required</div>
+        </div>
+        <div style="text-align: center;">
+            <button type="button" class="btn save-btn btn-primary" (click)="addNewCar()" *ngIf="!updateCar">Save</button>
+            <button type="button" class="btn save-btn btn-primary" (click)="updateCarDetails()" *ngIf="updateCar">Update</button>
+        </div>
+      </form>
+    </div>
+  </ng-template>
+
+  <ng-template #delete let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="delete-modal">Car deletion</h4>
+        <button type="button" class="close" aria-describedby="modal-title" (click)="close()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Are you sure you want to delete <span class="text-primary">"This Car"</span></strong></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" (click)="close()">Cancel</button>
+        <button type="button" class="btn btn-danger" (click)="deleteCar();">Yes</button>
+      </div>
+  </ng-template>
+
+  <ngx-spinner type="ball-clip-rotate-multiple"></ngx-spinner>
